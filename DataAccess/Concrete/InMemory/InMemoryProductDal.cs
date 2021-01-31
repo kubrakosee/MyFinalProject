@@ -10,7 +10,6 @@ namespace DataAccess.Concrete.InMemory
     public class InMemoryProductDal : IProductDal
     {
         List<Product> _products;
-        List<Category> categories;
         public InMemoryProductDal()
         {
             //Oracle,Sql Server,Postgres,MongoDb
