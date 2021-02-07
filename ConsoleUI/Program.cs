@@ -13,9 +13,10 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //ProductTest();
+
+            ProductTest();
             //IOC
-            CategoryTest();
+            //CategoryTest();
         }
 
         private static void CategoryTest()
@@ -30,10 +31,14 @@ namespace ConsoleUI
         private static void ProductTest()
         {
             ProductManager productManager = new ProductManager(new EFProductDal());
-            foreach (var product in productManager.GetByUnitPrice(50, 100))
+            foreach (var product in productManager.GetProductDetails())
             {
-                Console.WriteLine(product.ProductName);
+                Console.WriteLine(product.ProductName +"/"+product.CategoryName);
             }
+            //foreach (var product in productManager.GetByUnitPrice(50, 100))
+            //{
+            //    Console.WriteLine(product.ProductName);
+            //}
             //foreach (var product in productManager.GetAll())
             //{
             //    Console.WriteLine(product.ProductName);
